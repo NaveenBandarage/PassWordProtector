@@ -37,5 +37,28 @@ def addPassword(service, adminPass)
 
 if connect == AdminPassword
 	try:
-		
+		conn.execute('Creating Table Keys....')
+		print("Your vault has been created, what would you like to store?")
+	except:
+		print("You vault has already been created, what would you like to store today?")
+
+	while True:
+		print('*'*10) #prints out 10
+		print('Commands:')
+		print("q = quit")
+		print("s = store password")
+		print("g = get password")
+		print('*'*10) #prints out 10
+		input = input(":")
+
+
+		if input == "q":
+			break
+		if input == "s":
+			service = input("What is the name of the service?\n")
+			print("\n" + service.captalize() +  "password created:\n" + addPassword(service, AdminPassword))
+		if input = "g":
+			service = input("What is the name of the service?\n")
+			print("\n" + service.captalize() +  "password created:\n" + addPassword(service, AdminPassword))
+
 #Unfinished needs some more stuff
