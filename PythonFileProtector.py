@@ -2,10 +2,10 @@
 import sqlite3
 from hashlib import sha256
 
-AdminPass = "ASS"
+AdminPassword = "ASS"
 connect = input("What is the password?\n")
 
-while connect !=AdminPassword: 
+while connect !=AdminPassword:
 	print("Wrong password! Try again!)
 	connect = input("What is the password?")
 	if connect == "quit":
@@ -21,5 +21,21 @@ conn = sqlite3.connect('passManager.db')
 
 def getPassword(AdminPass, service):
 	secretKey = getHexkey(adminPass, service)
-	cursor = conn.execute("Select * From keys whre pass key" + '"' + secretKey + '"'
-#Unfinished needs some more stuff 
+	cursor = conn.execute("Select * From keys where pass key" + '"' + secretKey + '"')
+	passKey = ""
+	for row in cursor
+		passKey = row[0]
+
+	return createPassword(passKey, service, adminPass)
+def addPassword(service, adminPass)
+	secretKey = getHexKey(adminPass, service)
+	command = 'Insert into Keys values (%s);' + %('" + secretKey + "')
+	conn.execute(command)
+	conn.commit()
+
+	return createPass(secretKey, service, adminPass)
+
+if connect == AdminPassword
+	try:
+		
+#Unfinished needs some more stuff
